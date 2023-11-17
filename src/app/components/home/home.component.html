@@ -1,0 +1,77 @@
+<h2>Easy, Breezy, Beautiful: Angular Material</h2>
+
+<p>Here are some random angular material components</p>
+<h3>{{ context }}</h3>
+
+<mat-card>
+	<mat-card-header>
+		<img
+			mat-card-avatar
+			src="https://cdn.pixabay.com/photo/2018/10/11/12/31/black-cat-3739702_1280.jpg"
+			alt="My Photos"
+		/>
+		<mat-card-title>Easy, Breezy, Beautiful</mat-card-title>
+		<mat-card-subtitle>Angular Material</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<p>
+			This is an amazing blog on Angular Material. Here is some awesome text
+			about Angular Material. Here is some awesome text about Angular Material.
+			Here is some awesome text about Angular Material. Here is some awesome
+			text about Angular Material. Here is some awesome text about Angular
+			Material. Here is some awesome text about Angular Material. Here is some
+			awesome text about Angular Material.
+		</p>
+	</mat-card-content>
+	<mat-card-actions align="end">
+		<button mat-raised-button color="primary">Read More</button>
+	</mat-card-actions>
+</mat-card>
+
+<div class="flex-container">
+	<div>
+		<button mat-raised-button color="warn">Raised Warn</button>
+		<button mat-raised-button color="primary">Raised Primary</button>
+		<button mat-raised-button color="accent">Raised Accent</button>
+		<button mat-stroked-button>Basic Stroked</button>
+		<button mat-stroked-button color="primary">Stroked Primary</button>
+		<button mat-stroked-button color="warn">Stroked Warn</button>
+	</div>
+
+	<button mat-fab>
+		<mat-icon>thumb_up</mat-icon>
+	</button>
+
+	<mat-radio-group aria-label="Select an option">
+		<mat-radio-button value="1">Option 1</mat-radio-button>
+		<mat-radio-button value="2">Option 2</mat-radio-button>
+	</mat-radio-group>
+
+	<mat-checkbox>Check me!</mat-checkbox>
+
+	<button
+		mat-flat-button
+		color="primary"
+		matTooltip="Info about the action"
+		matTooltipPosition="after"
+		aria-label="Button that displays a tooltip when focused or hovered over"
+	>
+		Tooltip
+	</button>
+</div>
+
+<mat-paginator
+	[length]="100"
+	[pageSize]="10"
+	[pageSizeOptions]="[5, 10, 25, 100]"
+></mat-paginator>
+
+<mat-form-field appearance="outline">
+	<mat-label>Select an option</mat-label>
+	<mat-select>
+		<mat-option>None</mat-option>
+		<mat-option value="option1">Option 1</mat-option>
+		<mat-option value="option2">Option 2</mat-option>
+		<mat-option value="option3">Option 3</mat-option>
+	</mat-select>
+</mat-form-field>

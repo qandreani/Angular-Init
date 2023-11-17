@@ -1,0 +1,116 @@
+@use '@angular/material' as mat;
+@include mat.core();
+$ca-blue-palette: (
+	50 : #e0eff2,
+	100 : #b3d8dd,
+	200 : #80bec7,
+	300 : #4da4b1,
+	400 : #2691a0,
+	500 : #007d8f,
+	600 : #007587,
+	700 : #006a7c,
+	800 : #006072,
+	900 : #004d60,
+	A100 : #90e5ff,
+	A200 : #5dd9ff,
+	A400 : #2acdff,
+	A700 : #11c6ff,
+	contrast: (
+		50 : #000000,
+		100 : #000000,
+		200 : #000000,
+		300 : #000000,
+		400 : #ffffff,
+		500 : #ffffff,
+		600 : #ffffff,
+		700 : #ffffff,
+		800 : #ffffff,
+		900 : #ffffff,
+		A100 : #000000,
+		A200 : #000000,
+		A400 : #000000,
+		A700 : #000000,
+	)
+);
+$ca-green-palette: (
+	50 : #e0eeec,
+	100 : #b3d5d0,
+	200 : #80bab0,
+	300 : #4d9e90,
+	400 : #268979,
+	500 : #007461,
+	600 : #006c59,
+	700 : #00614f,
+	800 : #005745,
+	900 : #004433,
+	A100 : #79ffd6,
+	A200 : #46ffc6,
+	A400 : #13ffb6,
+	A700 : #00f8ac,
+	contrast: (
+		50 : #000000,
+		100 : #000000,
+		200 : #000000,
+		300 : #000000,
+		400 : #ffffff,
+		500 : #ffffff,
+		600 : #ffffff,
+		700 : #ffffff,
+		800 : #ffffff,
+		900 : #ffffff,
+		A100 : #000000,
+		A200 : #000000,
+		A400 : #000000,
+		A700 : #000000,
+	)
+);
+$ca-warn-palette: (
+	50: #ffebef,
+	100: #ffcdc5,
+	200: #f0999f,
+	300: #e77179,
+	400: #f24e58,
+	500: #f83a40,
+	600: #e9313e,
+	700: #d72638,
+	800: #ca1e30,
+	900: #bb0d24,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: white,
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	)
+);
+$ca-primary: mat.define-palette($ca-blue-palette, 700, 300, 900);
+$ca-accent: mat.define-palette($ca-green-palette, 300, 100, 500);
+$ca-warn: mat.define-palette($ca-warn-palette, 700);
+$ca-light-theme: mat.define-light-theme((
+	color: (
+		primary: $ca-primary,
+		accent: $ca-accent,
+		warn: $ca-warn,
+	)
+));
+@include mat.all-component-themes($ca-light-theme);
+
+:root {
+	--color-primary: #{#007d8f};
+	--color-accent: #{#007461};
+	--color-warn: #{#f83a40};
+}
+
+mat-sidenav {
+	.active {
+		background-color: rgb(0, 125, 143, 0.2);
+		span {
+			color: var(--color-primary);
+		}
+	}
+}

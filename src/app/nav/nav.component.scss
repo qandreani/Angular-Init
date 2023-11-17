@@ -1,0 +1,96 @@
+.dashboard-container {
+	padding: 3rem;
+}
+
+.item-spacer {
+	flex: 1 1 auto;
+}
+
+mat-toolbar {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+
+mat-sidenav-container {
+	height: 100%;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav {
+	padding: 10px;
+	@media screen and (min-width: 600px) {
+		padding-top: 4rem;
+	}
+
+	a {
+		border-radius: 5px;
+	}
+
+	a:hover {
+		span {
+			color: var(--color-primary);
+		}
+	}
+
+	.entry {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 0.75rem;
+	}
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav-content {
+	padding-top: 3.5rem;
+	@media screen and (min-width: 600px) {
+		padding-top: 4rem;
+	}
+}
+
+/* Changement de couleur et de taille du select de context */
+:host ::ng-deep {
+	.mat-form-field {
+		height: 43px;
+		.mat-mdc-select-value {
+			color: white;
+		}
+
+		.mat-mdc-form-field-flex {
+			height: 42px !important;
+			align-items: center;
+		}
+
+		.mdc-notched-outline__trailing {
+			border-color: white !important;
+		}
+
+		.mdc-notched-outline__leading {
+			border-color: white !important;
+		}
+
+		.mdc-notched-outline__notch {
+			top: 50% !important;
+			border-color: white !important;
+
+			label {
+				color: white !important;
+				top: 50% !important;
+			}
+
+			label.mdc-floating-label--float-above {
+				top: 28px !important;
+				color: white !important;
+			}
+
+			.mat-mdc-floating-label {
+				color: white !important;
+			}
+		}
+
+		.mat-mdc-select-arrow {
+			color: white;
+		}
+	}
+}

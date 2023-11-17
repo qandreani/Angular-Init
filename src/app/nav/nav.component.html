@@ -1,0 +1,44 @@
+<mat-toolbar class="toolbar" color="primary" [class.mat-elevation-z4]=true>
+	<button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<h1>MyApp</h1>
+	<span class="item-spacer"></span>
+	<mat-form-field appearance="outline" class="mat-form-field">
+		<mat-label>Select an option</mat-label>
+		<mat-select [(value)]="selected" class="mat-select" (selectionChange)="test()">
+			<mat-option>None</mat-option>
+			<mat-option value="option1">Option 1</mat-option>
+			<mat-option value="option2">Option 2</mat-option>
+			<mat-option value="option3">Option 3</mat-option>
+		</mat-select>
+	</mat-form-field>
+	<span class="item-spacer"></span>
+	<button mat-icon-button matTooltip="Info about the action" (click)="toggleDarkTheme()">
+		<mat-icon fontSet="material-icons-outlined">{{ themeIcon }}</mat-icon>
+	</button>
+	<button mat-icon-button matTooltip="Info about the action">
+		<mat-icon fontSet="material-icons-outlined">help_outline</mat-icon>
+	</button>
+	<button mat-icon-button matTooltip="Info about the action">
+		<mat-icon fontSet="material-icons-outlined">logout</mat-icon>
+	</button>
+</mat-toolbar>
+
+<mat-sidenav-container autosize>
+	<mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile">
+		<mat-nav-list>
+			<a *ngFor="let item of menuItems" mat-list-item [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<span class="entry">
+					<mat-icon fontSet="material-icons-outlined">{{ item.icon }}</mat-icon>
+          <span *ngIf="isCollapsed">{{ item.name | titlecase }}</span>
+        </span>
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<div class="dashboard-container">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>
